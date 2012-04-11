@@ -1,0 +1,29 @@
+http://cdn.pokemon-gl.com/src/swf/theme/assets/common/main.swf
+http://cdn.pokemon-gl.com/src/swf/theme/assets/common/poke.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_arc.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_board.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_catalog.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_farm.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_footprint.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_garden.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_home.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_island.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_main.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_move.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_opening.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_room.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_share.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_sound.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_world_ca.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_world.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_yumeshima_se.swf
+http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_takarabako.swf
+
+http://cdn.pokemon-gl.com/src/swf/theme/assets/global/parts/pokemon/scaled/{sid}.swf
+http://cdn.pokemon-gl.com/src/swf/theme/assets/global/parts/nuts/{size}/{sid}.swf
+http://cdn.pokemon-gl.com/src/swf/theme/assets/global/parts/item/{size}/{sid}.swf
+
+The sid is obfuscated. To calculate it, first compute `(id << 8) ^ 0xc3c3c3`; then convert that number to decimal and replace the digits 0-9 with a-j. For pokemon, compute `(national_id << 16 | form_id << 8) ^ 0xc3c3c3`.
+
+Item sizes i've found:
