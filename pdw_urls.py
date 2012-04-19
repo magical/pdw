@@ -10,11 +10,11 @@ ITEM_PATH = "http://cdn.pokemon-gl.com/src/swf/theme/assets/global/parts/item/90
 
 FORMS = {
     201: list('abcdefghijklmnopqrstuvwxyz') + ['exclamation', 'question'],
-    351: ['normal', 'sunny', 'rainy', 'snow-cloud'],
+    351: ['', 'sunny', 'rainy', 'snowy'],
     386: ['normal', 'attack', 'defense', 'speed'],
     412: ['plant', 'sandy', 'trash'],
     413: ['plant', 'sandy', 'trash'],
-    421: ['sunshine', 'overcast'],
+    421: ['overcast', 'sunshine'],
     422: ['west', 'east'],
     423: ['west', 'east'],
     479: ['', 'heat', 'wash', 'frost', 'fan', 'mow'],
