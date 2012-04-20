@@ -1,3 +1,5 @@
+The dream world is built out of a lot of .swf files. Here is a non-exhaustive list.
+
 http://cdn.pokemon-gl.com/src/swf/theme/assets/common/main.swf
 http://cdn.pokemon-gl.com/src/swf/theme/assets/common/poke.swf
 http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw.swf
@@ -20,10 +22,27 @@ http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_world.swf
 http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_yumeshima_se.swf
 http://cdn.pokemon-gl.com/src/swf/pdw/assets/pdw_takarabako.swf
 
+`swfdump -a` is very useful for investigation.
+
+`main.swf` is the main entry point; it loads pdw.swf or gts.swf or gbu.swf
+`poke.swf` defines, among other things, `com.pokemon_dl.pdw.display::PokemonRenderer`.
+
+
 http://cdn.pokemon-gl.com/src/swf/theme/assets/global/parts/pokemon/scaled/{sid}.swf
+http://cdn.pokemon-gl.com/src/swf/theme/assets/global/parts/pokemon/fixed/{size}/{sid}.swf
 http://cdn.pokemon-gl.com/src/swf/theme/assets/global/parts/nuts/{size}/{sid}.swf
 http://cdn.pokemon-gl.com/src/swf/theme/assets/global/parts/item/{size}/{sid}.swf
 
-The sid is obfuscated. To calculate it, first compute `(id << 8) ^ 0xc3c3c3`; then convert that number to decimal and replace the digits 0-9 with a-j. For pokemon, compute `(national_id << 16 | form_id << 8) ^ 0xc3c3c3`.
+The images are SWF or PNG files wrapped in an SWF file. Look for the `{sid}_imageData` global, or blindly grab the contents of the DefineBinaryData tag.
 
-Item sizes i've found:
+For scalable images, the inner SWF is a simple single-frame animation which can be dumped with [swfrender][swftools] or [pyswf][].
+
+The sid is obfuscated. To calculate it, first compute `(id << 8) ^ 0xc3c3c3`; then convert that number to decimal and replace the digits 0-9 with a-j. For pokemon, use `(national_id << 16 | form_id << 8) ^ 0xc3c3c3` instead.
+
+Pokemon sizes: 182, 134, 54
+Item sizes: 28, 90
+Nut (berry) sizes: 28, 35, 57, 90
+
+
+[swftools]: http://www.svftools.org/
+[pyswf]: https://github.com/timknip/pyswf
