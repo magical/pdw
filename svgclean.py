@@ -4,6 +4,7 @@
 
 import sys
 import re
+from decimal import Decimal
 from lxml import etree
 from warnings import warn
 from collections import Counter
@@ -78,6 +79,53 @@ def svgclean(tree):
 
         if not e.get('transform'):
             del e.attrib['transform']
+
+    # Relativize paths
+    # (Borrowed from Sam Ruby's svgtidy.rb)
+    # (Doesn't work)
+    if 0:
+        for path in tree.xpath("//svg:path[@d]", namespaces=namespaces):
+            d = path.get('d')
+            new_d = []
+
+            pen = [0,0]
+            origin = [0,0]
+            for action, coords in re.findall(r'([a-zA-Z])([-0-9., e]*)', d):
+                coords = list(map(Decimal, re.findall(r'-?[0-9.]+(?:e[e+]\d+)?', coords)))
+                dest = coords[-2:]
+
+                if action == 'M':
+                    origin = coords
+                elif action == 'L' and coords == origin:
+                    action, coords = 'z', []
+                else:
+                    if action == 'A':
+                        coords[-2:] = pen
+                    else:
+                        for i in range(len(coords)):
+                            coords[i] -= pen[i%2]
+                    action = action.lower()
+
+                if action == 'l':
+                    if coords == [0, 0]:
+                        # skip these coords
+                        continue
+                    elif coords[0] == 0:
+                        action, coords = 'v', [coords[1]]
+                    elif coords[1] == 0:
+                        action, coords = 'h', [coords[0]]
+
+                if action == 'z':
+                    if pen == origin:
+                        # skip these coords
+                        continue
+                    elif dest:
+                        pen = dest
+
+                new_d.append(action + ','.join(str(n).replace('.0', '') for n in coords))
+
+            d = ' '.join(new_d)
+            path.set('d', d)
 
     # Remove empty defs
     for defs in tree.xpath("//svg:defs", namespaces=namespaces):
