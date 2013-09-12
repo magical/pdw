@@ -29,6 +29,11 @@ FORMS = {
     586: ['spring', 'summer', 'autumn', 'winter'],
     592: ['', 'female'],
     593: ['', 'female'],
+    641: ['incarnate', 'therian'],
+    642: ['incarnate', 'therian'],
+    645: ['incarnate', 'therian'],
+    646: ['', 'black', 'white'],
+    647: ['', 'resolute'],
     648: ['aria', 'pirouette'],
     649: ['', 'douse', 'shock', 'burn', 'chill'],
 }
@@ -62,7 +67,7 @@ def getitem(item_id):
 
 import sys
 if len(sys.argv) == 1:
-    for number in range(1, 646 + 1):
+    for number in range(1, 649 + 1):
         forms = FORMS.get(number, [''])
         for form_index, form_name in enumerate(forms):
             if form_name:
