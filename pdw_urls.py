@@ -32,8 +32,8 @@ FORMS = {
     641: ['incarnate', 'therian'],
     642: ['incarnate', 'therian'],
     645: ['incarnate', 'therian'],
-    646: ['', 'black', 'white'],
-    647: ['', 'resolute'],
+    646: ['', 'white', 'black'],
+    647: ['ordinary', 'resolute'],
     648: ['aria', 'pirouette'],
     649: ['', 'douse', 'shock', 'burn', 'chill'],
 }
