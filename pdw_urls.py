@@ -76,7 +76,12 @@ if len(sys.argv) == 1:
                 name = "{}.swf".format(number)
             print(geturl(number, form_index), name)
 elif len(sys.argv) == 2:
-    print(geturl(int(sys.argv[1]), 0))
+    if sys.argv[1] == 'missing':
+        for number in range(1, 649+1):
+            form_index = len(FORMS.get(number, ['']))
+            print(geturl(number, form_index))
+    else:
+        print(geturl(int(sys.argv[1]), 0))
 elif len(sys.argv) == 3:
     print(geturl(int(sys.argv[1]), int(sys.argv[2])))
 else:
