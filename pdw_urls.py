@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 PDW_TABLE = str.maketrans('0123456789', 'abcdefghij')
-URL = "http://cdn.pokemon-gl.com/src/swf/theme/assets/global/parts/pokemon/scaled/{0}.swf"
-NUTS_PATH = "http://cdn.pokemon-gl.com/src/swf/theme/assets/global/parts/nuts/90/{0}.swf"
-ITEM_PATH = "http://cdn.pokemon-gl.com/src/swf/theme/assets/global/parts/item/90/{0}.swf"
+URL = "http://cdn2.pokemon-gl.com/src/swf/theme/assets/global/parts/pokemon/scaled/{0}.swf"
+NUTS_PATH = "http://cdn2.pokemon-gl.com/src/swf/theme/assets/global/parts/nuts/90/{0}.swf"
+ITEM_PATH = "http://cdn2.pokemon-gl.com/src/swf/theme/assets/global/parts/item/90/{0}.swf"
 
 # Item sizes: 28, 90
 # Nuts sizes: 28, 35, 57, 90, 
