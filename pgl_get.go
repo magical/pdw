@@ -13,73 +13,73 @@ const MaxPokemon = 719
 const BaseUrl = "http://3ds.pokemon-gl.com/share/images/pokemon"
 
 var formNames = map[int][]string{
-	201: []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+	201: {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 		"n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
 		"exclamation", "question"},
-	351: []string{"", "sunny", "rainy", "snowy"},
-	386: []string{"normal", "attack", "defense", "speed"},
-	412: []string{"plant", "sandy", "trash"},
-	413: []string{"plant", "sandy", "trash"},
-	421: []string{"overcast", "sunshine"},
-	422: []string{"west", "east"},
-	423: []string{"west", "east"},
-	479: []string{"", "heat", "wash", "frost", "fan", "mow"},
-	487: []string{"altered", "origin"},
-	492: []string{"land", "sky"},
-	493: []string{"normal", "fighting", "flying", "poison", "ground",
+	351: {"", "sunny", "rainy", "snowy"},
+	386: {"normal", "attack", "defense", "speed"},
+	412: {"plant", "sandy", "trash"},
+	413: {"plant", "sandy", "trash"},
+	421: {"overcast", "sunshine"},
+	422: {"west", "east"},
+	423: {"west", "east"},
+	479: {"", "heat", "wash", "frost", "fan", "mow"},
+	487: {"altered", "origin"},
+	492: {"land", "sky"},
+	493: {"normal", "fighting", "flying", "poison", "ground",
 		"rock", "bug", "ghost", "steel", "fire", "water", "grass",
 		"electric", "psychic", "ice", "dragon", "dark", "fairy"},
-	550: []string{"red-striped", "blue-striped"},
-	555: []string{"standard", "zen"},
-	585: []string{"spring", "summer", "autumn", "winter"},
-	586: []string{"spring", "summer", "autumn", "winter"},
-	592: []string{"male", "female"},
-	593: []string{"male", "female"},
-	641: []string{"incarnate", "therian"},
-	642: []string{"incarnate", "therian"},
-	645: []string{"incarnate", "therian"},
-	646: []string{"", "white", "black"},
-	647: []string{"ordinary", "resolute"},
-	648: []string{"aria", "pirouette"},
-	649: []string{"", "douse", "shock", "burn", "chill"},
-	666: []string{"icy-snow", "polar", "tundra", "continental", "garden",
+	550: {"red-striped", "blue-striped"},
+	555: {"standard", "zen"},
+	585: {"spring", "summer", "autumn", "winter"},
+	586: {"spring", "summer", "autumn", "winter"},
+	592: {"male", "female"},
+	593: {"male", "female"},
+	641: {"incarnate", "therian"},
+	642: {"incarnate", "therian"},
+	645: {"incarnate", "therian"},
+	646: {"", "white", "black"},
+	647: {"ordinary", "resolute"},
+	648: {"aria", "pirouette"},
+	649: {"", "douse", "shock", "burn", "chill"},
+	666: {"icy-snow", "polar", "tundra", "continental", "garden",
 		"elegant", "meadow", "modern", "marine", "archipelago",
 		"high-plains", "sandstorm", "river", "monsoon", "savanna",
 		"sun", "ocean", "jungle"},
-	669: []string{"red", "yellow", "orange", "blue", "white"},
-	670: []string{"red", "yellow", "orange", "blue", "white"},
-	671: []string{"red", "yellow", "orange", "blue", "white"},
-	676: []string{"natural", "heart", "star", "diamond", "deputante",
+	669: {"red", "yellow", "orange", "blue", "white"},
+	670: {"red", "yellow", "orange", "blue", "white"},
+	671: {"red", "yellow", "orange", "blue", "white"},
+	676: {"natural", "heart", "star", "diamond", "deputante",
 		"matron", "dandy", "la-reine", "kabuki", "pharaoh"},
-	678: []string{"male", "female"},
-	681: []string{"shield", "blade"},
+	678: {"male", "female"},
+	681: {"shield", "blade"},
 
-	3:   []string{"", "mega"},
-	6:   []string{"", "mega-x", "mega-y"},
-	9:   []string{"", "mega"},
-	65:  []string{"", "mega"},
-	94:  []string{"", "mega"},
-	115: []string{"", "mega"},
-	127: []string{"", "mega"},
-	130: []string{"", "mega"},
-	142: []string{"", "mega"},
-	150: []string{"", "mega-x", "mega-y"},
-	181: []string{"", "mega"},
-	212: []string{"", "mega"},
-	214: []string{"", "mega"},
-	229: []string{"", "mega"},
-	248: []string{"", "mega"},
-	257: []string{"", "mega"},
-	282: []string{"", "mega"},
-	303: []string{"", "mega"},
-	306: []string{"", "mega"},
-	308: []string{"", "mega"},
-	310: []string{"", "mega"},
-	354: []string{"", "mega"},
-	359: []string{"", "mega"},
-	445: []string{"", "mega"},
-	448: []string{"", "mega"},
-	460: []string{"", "mega"},
+	3:   {"", "mega"},
+	6:   {"", "mega-x", "mega-y"},
+	9:   {"", "mega"},
+	65:  {"", "mega"},
+	94:  {"", "mega"},
+	115: {"", "mega"},
+	127: {"", "mega"},
+	130: {"", "mega"},
+	142: {"", "mega"},
+	150: {"", "mega-x", "mega-y"},
+	181: {"", "mega"},
+	212: {"", "mega"},
+	214: {"", "mega"},
+	229: {"", "mega"},
+	248: {"", "mega"},
+	257: {"", "mega"},
+	282: {"", "mega"},
+	303: {"", "mega"},
+	306: {"", "mega"},
+	308: {"", "mega"},
+	310: {"", "mega"},
+	354: {"", "mega"},
+	359: {"", "mega"},
+	445: {"", "mega"},
+	448: {"", "mega"},
+	460: {"", "mega"},
 }
 
 func getUrl(n, id int) string {
@@ -89,17 +89,14 @@ func getUrl(n, id int) string {
 
 func getFilename(n, id int) string {
 	names, ok := formNames[n]
+	if !ok {
+		names = []string{""}
+	}
 	name := ""
-	if ok {
-		if id < len(names) {
-			name = names[id]
-		} else {
-			name = fmt.Sprint(id)
-		}
+	if id < len(names) {
+		name = names[id]
 	} else {
-		if id > 0 {
-			name = fmt.Sprint(id)
-		}
+		name = fmt.Sprint(id)
 	}
 	if name == "" {
 		return fmt.Sprintf("%d.png", n)
@@ -143,7 +140,8 @@ func main() {
 			err := getFile(url, filename)
 			if err == NotFound {
 				break
-			} else if err != nil {
+			}
+			if err != nil {
 				log.Println(err)
 			}
 		}
