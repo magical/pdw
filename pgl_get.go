@@ -46,10 +46,11 @@ var formNames = map[int][]string{
 		"elegant", "meadow", "modern", "marine", "archipelago",
 		"high-plains", "sandstorm", "river", "monsoon", "savanna",
 		"sun", "ocean", "jungle"},
-	668: []string{"red", "yellow", "orange", "blue", "white"},
 	669: []string{"red", "yellow", "orange", "blue", "white"},
 	670: []string{"red", "yellow", "orange", "blue", "white"},
-	676: []string{"natural", "heart", "star", "diamond", "deputante", "matron", "dandy", "la-reine", "kabuki", "pharaoh"},
+	671: []string{"red", "yellow", "orange", "blue", "white"},
+	676: []string{"natural", "heart", "star", "diamond", "deputante",
+		"matron", "dandy", "la-reine", "kabuki", "pharaoh"},
 	678: []string{"male", "female"},
 	681: []string{"shield", "blade"},
 
@@ -131,10 +132,10 @@ func getFile(url, filename string) error {
 }
 
 func main() {
-	for n := 1; n <= MaxPokemon+5; n++ {
-		if _, ok := formNames[n]; !ok {
+	for n := 1; n <= MaxPokemon; n++ {
+		/*if _, ok := formNames[n]; !ok {
 			continue
-		}
+		}*/
 		id := 0
 		for ; ; id++ {
 			url := getUrl(n, id)
