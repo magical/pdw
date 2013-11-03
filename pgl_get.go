@@ -49,10 +49,12 @@ var formNames = map[int][]string{
 	669: {"red", "yellow", "orange", "blue", "white"},
 	670: {"red", "yellow", "orange", "blue", "white"},
 	671: {"red", "yellow", "orange", "blue", "white"},
-	676: {"natural", "heart", "star", "diamond", "debutante",
+	676: {"", "heart", "star", "diamond", "debutante",
 		"matron", "dandy", "la-reine", "kabuki", "pharaoh"},
 	678: {"male", "female"},
 	681: {"shield", "blade"},
+	710: {"average", "small", "large", "super"},
+	711: {"average", "small", "large", "super"},
 
 	3:   {"", "mega"},
 	6:   {"", "mega-x", "mega-y"},
