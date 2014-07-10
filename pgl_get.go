@@ -45,7 +45,7 @@ var formNames = map[int][]string{
 	666: {"icy-snow", "polar", "tundra", "continental", "garden",
 		"elegant", "meadow", "modern", "marine", "archipelago",
 		"high-plains", "sandstorm", "river", "monsoon", "savanna",
-		"sun", "ocean", "jungle"},
+		"sun", "ocean", "jungle", "fancy", "poke-ball"},
 	669: {"red", "yellow", "orange", "blue", "white"},
 	670: {"red", "yellow", "orange", "blue", "white"},
 	671: {"red", "yellow", "orange", "blue", "white"},
