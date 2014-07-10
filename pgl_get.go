@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-const MaxPokemon = 719
+const MaxPokemon = 721
 const BaseUrl = "http://3ds.pokemon-gl.com/share/images/pokemon"
 
 var formNames = map[int][]string{
