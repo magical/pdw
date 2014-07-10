@@ -144,6 +144,7 @@ func main() {
 			if err == NotFound {
 				break
 			}
+			fmt.Println(filename)
 			if err != nil {
 				log.Println(err)
 			}
