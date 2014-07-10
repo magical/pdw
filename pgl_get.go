@@ -55,6 +55,7 @@ var formNames = map[int][]string{
 	681: {"shield", "blade"},
 	710: {"average", "small", "large", "super"},
 	711: {"average", "small", "large", "super"},
+	716: {"neutral", "active"},
 
 	3:   {"", "mega"},
 	6:   {"", "mega-x", "mega-y"},
