@@ -10,7 +10,7 @@ import (
 )
 
 const MaxPokemon = 721
-const BaseUrl = "http://3ds.pokemon-gl.com/share/images/pokemon"
+const BaseUrl = "https://d1q0mq3xgst30d.cloudfront.net/share/images/pokemon"
 
 var formNames = map[int][]string{
 	201: {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
