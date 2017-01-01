@@ -9,8 +9,8 @@ import (
 	"os"
 )
 
-const MaxPokemon = 721
-const BaseUrl = "https://d1q0mq3xgst30d.cloudfront.net/share/images/pokemon"
+const MaxPokemon = 801
+const BaseUrl = "https://n-3ds-pgl-contents.pokemon-gl.com/share/images/pokemon"
 
 var formNames = map[int][]string{
 	25: {"", "rock-star", "belle", "pop-star", "phd", "libre"},
